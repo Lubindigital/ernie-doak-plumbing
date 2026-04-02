@@ -79,35 +79,17 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`p-6 rounded-xl transition-all duration-300 hover:shadow-md ${
-                i % 3 === 0
-                  ? "bg-primary text-white"
-                  : "bg-white border border-gray-100"
-              }`}
+              className="p-6 rounded-xl transition-all duration-300 hover:shadow-md bg-primary text-white"
             >
               <div className="flex items-start justify-between mb-3">
-                <span
-                  className={`text-[10px] font-bold tracking-[0.15em] uppercase px-2 py-0.5 rounded ${
-                    i % 3 === 0
-                      ? "bg-accent/20 text-accent-light"
-                      : "bg-primary/5 text-primary"
-                  }`}
-                >
+                <span className="text-[10px] font-bold tracking-[0.15em] uppercase px-2 py-0.5 rounded bg-accent/20 text-accent-light">
                   {service.category}
                 </span>
               </div>
-              <h3
-                className={`text-lg font-semibold mb-2 ${
-                  i % 3 === 0 ? "text-white" : "text-gray-900"
-                }`}
-              >
+              <h3 className="text-lg font-semibold mb-2 text-white">
                 {service.title}
               </h3>
-              <p
-                className={`text-sm leading-relaxed ${
-                  i % 3 === 0 ? "text-green-100" : "text-gray-600"
-                }`}
-              >
+              <p className="text-sm leading-relaxed text-green-100">
                 {service.description}
               </p>
             </div>
