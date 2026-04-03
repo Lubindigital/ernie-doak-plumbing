@@ -48,7 +48,7 @@ const services = [
     description:
       "Backflow preventer installation, testing, and certification. Protect your water supply from contamination.",
     category: "Repair",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=75",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=75",
   },
   {
     title: "General Plumbing Repairs",
