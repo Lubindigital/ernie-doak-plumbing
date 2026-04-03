@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Legacy() {
   return (
     <section id="about" className="py-16 sm:py-24 bg-white">
@@ -7,9 +9,20 @@ export default function Legacy() {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
             A Family Legacy in Plumbing
           </h2>
-          <p className="text-center text-gray-500 mb-12">
+          <p className="text-center text-gray-500 mb-8">
             From Southern California to Oahu&apos;s North Shore
           </p>
+
+          {/* About image */}
+          <div className="relative w-full h-56 sm:h-72 rounded-xl overflow-hidden mb-12">
+            <Image
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80"
+              alt="Construction and plumbing work on a residential build"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+          </div>
 
           <div className="space-y-0">
             {[

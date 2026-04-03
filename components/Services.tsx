@@ -1,51 +1,61 @@
+import Image from "next/image";
+
 const services = [
   {
     title: "New Construction",
     description:
       "Complete plumbing systems for new residential and commercial builds. From rough-in to finish, we handle every phase with precision.",
     category: "Build",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=75",
   },
   {
     title: "Remodels & Renovations",
     description:
       "Kitchen and bathroom remodel plumbing. We work with your contractor to ensure everything is done right, on time, and on budget.",
     category: "Build",
+    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=75",
   },
   {
     title: "Solar Hot Water Systems",
     description:
       "Installation, service, and repair of solar water heating systems. Take advantage of Hawaii's sunshine and lower your energy bills.",
     category: "Specialty",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=75",
   },
   {
     title: "Water Heaters",
     description:
       "Electric, gas, hybrid, and on-demand water heater installation and repair. We'll help you choose the right system for your home.",
     category: "Specialty",
+    image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400&q=75",
   },
   {
     title: "Gas Piping",
     description:
       "Safe, code-compliant gas line installation and repair. We're certified to work with natural gas and propane systems across Oahu.",
     category: "Specialty",
+    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&q=75",
   },
   {
     title: "System Repiping",
     description:
       "Full water, sewer, and gas repiping for aging systems. Upgrade your home's plumbing infrastructure with modern, reliable materials.",
     category: "Repair",
+    image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=400&q=75",
   },
   {
     title: "Backflow Prevention",
     description:
       "Backflow preventer installation, testing, and certification. Protect your water supply from contamination.",
     category: "Repair",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=75",
   },
   {
     title: "General Plumbing Repairs",
     description:
       "Leaks, clogs, fixture replacements, and everything in between. No job is too small for our team.",
     category: "Repair",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=75",
   },
 ];
 
@@ -79,19 +89,28 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className="p-6 rounded-xl transition-all duration-300 hover:shadow-md bg-primary text-white"
+              className="rounded-xl transition-all duration-300 hover:shadow-md bg-primary text-white overflow-hidden"
             >
-              <div className="flex items-start justify-between mb-3">
-                <span className="text-[10px] font-bold tracking-[0.15em] uppercase px-2 py-0.5 rounded bg-accent/20 text-accent-light">
+              <div className="relative h-40">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" />
+                <span className="absolute top-3 left-3 text-[10px] font-bold tracking-[0.15em] uppercase px-2 py-0.5 rounded bg-accent/20 text-accent-light backdrop-blur-sm">
                   {service.category}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-white">
-                {service.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-green-100">
-                {service.description}
-              </p>
+              <div className="p-6 pt-3">
+                <h3 className="text-lg font-semibold mb-2 text-white">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-green-100">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

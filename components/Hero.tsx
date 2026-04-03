@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative bg-warm">
@@ -49,29 +51,26 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — Visual panel */}
-          <div className="relative bg-primary hidden lg:flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage:
-                    "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E\")",
-                }}
-              />
-            </div>
-            <div className="relative text-center text-white px-12">
-              <div className="text-7xl font-bold text-accent mb-2">35+</div>
-              <div className="text-xl font-medium text-green-100 mb-8">Years on Oahu</div>
-              <div className="grid grid-cols-2 gap-6 text-left">
+          {/* Right — Image panel */}
+          <div className="relative hidden lg:block overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80"
+              alt="Professional plumber working on copper pipes"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="grid grid-cols-2 gap-3">
                 {[
                   { num: "Est. 1984", label: "Founded in SoCal" },
                   { num: "Since 1989", label: "Serving North Shore" },
                   { num: "5.0", label: "Star Rating" },
                   { num: "Top 4%", label: "Of HI Contractors" },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-white/10 rounded-lg p-4">
-                    <div className="text-lg font-bold text-accent">{stat.num}</div>
+                  <div key={stat.label} className="bg-black/30 backdrop-blur-sm rounded-lg p-3">
+                    <div className="text-base font-bold text-accent">{stat.num}</div>
                     <div className="text-xs text-green-200">{stat.label}</div>
                   </div>
                 ))}
